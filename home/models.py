@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 # Create your models here.
 
 
@@ -20,4 +22,8 @@ class Setting(models.Model):
     icon =  models.ImageField(upload_to='images/')
     aboutus = models.TextField(max_length=255)
     contact = models.CharField(max_length=100)
+
+
+
+
 

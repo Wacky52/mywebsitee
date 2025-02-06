@@ -92,6 +92,7 @@
     </div>
   </div>
   <!-- course item -->
+  {% for sub in subject_cr %}
   <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
       <img class="card-img-top rounded-0" src="images/courses/course-2.jpg" alt="course thumb">
@@ -101,14 +102,14 @@
           <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
         </ul>
         <a href="course-single.html">
-          <h4 class="card-title">Programming</h4>
+          <h4 class="card-title">{{ sub.title | safe }}</h4>
         </a>
-        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna.</p>
+        <p class="card-text mb-4">{{ sub.description | safe }}</p>
         <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
       </div>
     </div>
   </div>
+  {% endfor %}
   <!-- course item -->
   <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">

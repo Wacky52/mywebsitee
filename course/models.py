@@ -21,6 +21,25 @@ class Subject(models.Model):
     slug = models.SlugField(null=False,unique=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
-    
+
     def __str__(self):
         return self.title
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.name
+
+class Tutor(models.Model):
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    name = models.CharField(max_length=150)
+    description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.name
